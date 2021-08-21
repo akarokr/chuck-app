@@ -19,7 +19,6 @@ STATUS_405='Method not allowed'
 def langRoute():
     import os
     lang = os.environ.get('LANG').split("_")[0]
-    print (lang)
     if lang == 'pt':
         xablam = chuckNorrisBR()
         return xablam

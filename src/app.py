@@ -15,16 +15,19 @@ STATUS_500='Internal error'
 STATUS_404='Not found'
 STATUS_405='Method not allowed'
 
-
 @app.route("/")
 def langRoute():
     import os
-    lang = os.environ.get('LANG')
-    if lang == 'pt_BR':
+    lang = os.environ.get('LANG').split("_")[0]
+    print (lang)
+    if lang == 'pt':
         xablam = chuckNorrisBR()
-    else:
+        return xablam
+    elif lang == 'en':
         xablam = chuckNorrisUS()
-    return xablam
+        return xablam
+    else:
+        return 404
 
 def chuckNorrisUS():
     url = 'https://api.chucknorris.io/jokes/random'

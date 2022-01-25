@@ -50,7 +50,7 @@ def chuckNorrisUS():
         return xablam
 
 def chuckNorrisBR():
-    url = 'https://www.chucknorris.com.br/p'
+    url = 'https://www.chucknorris.com.br/p.php'
     r = requests.get(url)
     if r.status_code == 200:
         local = datetime.now()
